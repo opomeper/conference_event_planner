@@ -38,3 +38,17 @@
 .right {
   margin-right: 0;
 }
+
+.book_now_btn {
+    padding: 15px 75px;
+    font-size: 23px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end; /* pushes content (like button) to the right */
+  }
+

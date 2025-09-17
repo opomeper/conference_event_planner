@@ -6,6 +6,10 @@ import "./TotalCost.css";
 const TotalCost = ({ totalCosts, ItemsDisplay }) => {
   const total_amount = totalCosts.venue + totalCosts.av + totalCosts.meals;
 
+const handleBookPlan = (e) => {
+        alert('Functionality to be added for future reference');
+    };
+
   return (
     <div className="pricing-app">
       <div className="display_box">
@@ -20,6 +24,11 @@ const TotalCost = ({ totalCosts, ItemsDisplay }) => {
           <div className="render_items">
              <ItemsDisplay />
           </div>
+        </div>
+        <div className="book_now_btn">
+            <button onClick={(e) => handleBookPlan(e)} className="book_now">
+                  Book Plan
+            </button>
         </div>
       </div>
     </div>

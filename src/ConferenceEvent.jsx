@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { incrementQuantity, decrementQuantity } from "./venueSlice";
 import { incrementAvQuantity, decrementAvQuantity } from "./avSlice";
 import { toggleMealSelection } from "./mealsSlice";
-const ConferenceEvent = () => {
+const ConferenceEvent = ({ onHomeClick }) => {
     const [showItems, setShowItems] = useState(false);
     const [numberOfPeople, setNumberOfPeople] = useState(1);
     const venueItems = useSelector((state) => state.venue);
@@ -13,6 +13,11 @@ const ConferenceEvent = () => {
     const mealsItems = useSelector((state) => state.meals);
     const dispatch = useDispatch();
     const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "Auditorium Hall (Capacity:200)").quantity;
+
+    const handleHomeClick = (e) => {
+        e.preventDefault();
+        onHomeClick();
+    };
 
     const handleToggleItems = () => {
       console.log("handleToggleItems called");
@@ -157,7 +162,9 @@ const ConferenceEvent = () => {
     return (
       <>
         <navbar className="navbar_event_conference">
-          <div className="company_logo">Conference Expense Planner</div>
+          <a href="/" onClick={(e) => handleHomeClick(e)}>
+              <div className="company_logo">Conference Expense Planner</div>
+          </a>
           <div className="left_navbar">
             <div className="nav_links">
               <a href="#venue" onClick={() => navigateToProducts("#venue")} >Venue</a>

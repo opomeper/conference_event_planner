@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.app-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .first_page {
   display: flex;
   height: 100vh;
@@ -15,7 +21,7 @@
   color: white;
   overflow: hidden; 
   background-color: rgb(185, 186, 187);
-  /* position: relative; */
+  position: relative;
 }
 
 .first_page::before {

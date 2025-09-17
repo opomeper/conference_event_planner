@@ -10,9 +10,13 @@ function App() {
     setShowVenue(true);
   };
 
+  const handleHomeClick = () => {
+    setShowVenue(false);
+  };
+
   return (
-    <>
-      <header className="first_page">
+    <div className="app-container">
+      <header className={`first_page ${showVenue ? 'fade-out' : ''}`}>
         <div className="main_event">
           <div className="first_page_name_btn">
             <h1 className="budget_heading">Conference Expense Planner</h1>
@@ -30,9 +34,9 @@ function App() {
       </header>
 
       <div className={`event-list-container ${showVenue ? 'visible' : ''}`}>
-        <ConferenceEvent />
+        <ConferenceEvent onHomeClick={handleHomeClick} />
       </div>
-    </>
+    </div>
   );
 }
 
